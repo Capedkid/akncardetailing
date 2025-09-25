@@ -44,11 +44,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <div className="font-[var(--font-display)] text-xl tracking-wide">{heroTitle}</div>
-          <nav className="hidden sm:flex gap-6 text-sm">
-            <a href="#paketler" className="hover:text-zinc-300">Paketler</a>
-            <a href="#iletisim" className="hover:text-zinc-300">İletişim</a>
-          </nav>
-          <a href="#iletisim" className="sm:inline-block hidden rounded-md bg-white text-black px-4 py-2 text-sm font-medium">Hemen Ara</a>
+          <a href="#iletisim" className="rounded-md bg-white text-black px-4 py-2 text-sm font-medium hover:bg-zinc-100 transition-colors">Hemen Ara</a>
         </div>
       </header>
 
@@ -69,9 +65,11 @@ export default function Home() {
             Kusursuz parlaklık ve koruma. AKN car detailing ile aracınız ilk günkü
             görünümüne kavuşsun.
           </p>
-          <div className="flex gap-3">
-            <a href="#paketler" className="rounded-md bg-white text-black px-5 py-2.5 text-sm font-semibold">Paketleri Gör</a>
-            <a href="#iletisim" className="rounded-md border border-white/20 px-5 py-2.5 text-sm font-semibold hover:bg-white/10">İletişime Geç</a>
+          <div className="flex justify-start">
+            <a href="#paketler" className="group relative rounded-lg bg-white text-black px-6 py-3 text-sm font-semibold transition-all duration-300 hover:bg-zinc-100 hover:shadow-lg hover:shadow-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black">
+              <span className="relative z-10">Paketleri Gör</span>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-white to-zinc-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
           </div>
         </div>
         
@@ -81,29 +79,62 @@ export default function Home() {
 
       {/* Packages */}
       <section id="paketler" className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-[var(--font-display)] mb-4">Premium Paketlerimiz</h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto">Aracınız için en uygun paketi seçin</p>
+        </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="rounded-2xl border border-white/10 bg-zinc-900/60 p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-[var(--font-display)] mb-4">Premium Gold Paket</h2>
-            <ul className="space-y-2 text-zinc-200">
-              {premiumGoldItems.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/70" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="group relative rounded-3xl border border-amber-500/20 bg-gradient-to-br from-zinc-900/80 via-zinc-800/60 to-zinc-900/80 p-8 backdrop-blur-sm transition-all duration-500 hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-500/5 via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl sm:text-3xl font-[var(--font-display)] text-amber-400">Premium Gold</h3>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-white">10.000₺</div>
+                  <div className="text-sm text-zinc-400">Paket halinde</div>
+                </div>
+              </div>
+              <ul className="space-y-3 text-zinc-200">
+                {premiumGoldItems.slice(0, -1).map((item) => (
+                  <li key={item} className="flex gap-3 items-start">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-amber-400 flex-shrink-0" />
+                    <span className="text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 pt-4 border-t border-zinc-700/50">
+                <a href="#iletisim" className="block w-full text-center rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-black px-6 py-3 font-semibold transition-all duration-300 hover:from-amber-400 hover:to-amber-500 hover:shadow-lg hover:shadow-amber-500/25">
+                  Paketi İncele
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-zinc-900/60 p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-[var(--font-display)] mb-4">Pasta - Cila - Kuaför Paketi</h2>
-            <ul className="space-y-2 text-zinc-200">
-              {kuaforItems.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/70" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="group relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/80 via-zinc-800/60 to-zinc-900/80 p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-white/5">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl sm:text-3xl font-[var(--font-display)] text-white">Pasta - Cila - Kuaför</h3>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-white">Fiyat Al</div>
+                  <div className="text-sm text-zinc-400">Araç durumuna göre</div>
+                </div>
+              </div>
+              <ul className="space-y-3 text-zinc-200">
+                {kuaforItems.slice(0, 8).map((item) => (
+                  <li key={item} className="flex gap-3 items-start">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-white/70 flex-shrink-0" />
+                    <span className="text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+                <li className="text-zinc-400 text-sm italic">+ {kuaforItems.length - 8} hizmet daha...</li>
+              </ul>
+              <div className="mt-6 pt-4 border-t border-zinc-700/50">
+                <a href="#iletisim" className="block w-full text-center rounded-xl border border-white/20 text-white px-6 py-3 font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/30 hover:shadow-lg hover:shadow-white/10">
+                  Fiyat Al
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
