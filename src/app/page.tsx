@@ -39,7 +39,18 @@ const kuaforItems = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Subtle car-themed pattern overlay */}
+      <div className="fixed inset-0 pointer-events-none opacity-40" style={{
+        background: `
+          repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 40px),
+          repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 60px),
+          radial-gradient(circle at 25% 25%, rgba(255,255,255,0.04) 1px, transparent 1px),
+          radial-gradient(circle at 75% 75%, rgba(255,255,255,0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px, 60px 60px, 50px 50px, 70px 70px',
+        backgroundPosition: '0 0, 20px 20px, 0 0, 35px 35px'
+      }} />
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
@@ -50,10 +61,21 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <div className="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black opacity-90" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
+        {/* Background Image - FINAL VERSION */}
+        <div className="absolute inset-0 z-0">
+          {/* Hero background image */}
+          <div className="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center'
+               }} />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+          {/* Secondary gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-zinc-900/20 to-zinc-800/30" />
+          {/* Accent gradient */}
+          <div className="absolute inset-0 bg-gradient-to-bl from-amber-900/5 via-transparent to-transparent" />
         </div>
         
         {/* Content */}
