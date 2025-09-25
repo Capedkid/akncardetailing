@@ -1,102 +1,132 @@
 import Image from "next/image";
 
+const heroTitle = process.env.NEXT_PUBLIC_SITE_NAME || "AKN car detailing";
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE || "+905437458055";
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "905437458055";
+
+const premiumGoldItems = [
+  "Kil ve demir tozu uygulamaları",
+  "Kalın çizik giderici pasta",
+  "İnce çizik giderici",
+  "Hare hologram uygulaması",
+  "Far ve stop temizleme",
+  "Tavan, taban, plastik aksam, koltuklar, motor ve bagaj temizleme",
+  "Nasiolzr53 seramik kaplama işlemleri",
+  "Paket halinde 10.000₺",
+];
+
+const kuaforItems = [
+  "Kalın pasta",
+  "İnce pasta",
+  "Hare giderici",
+  "Boya koruma",
+  "Far stop parlatma",
+  "Jant temizliği",
+  "Tavan temizliği",
+  "Taban temizliği",
+  "Koltuk temizliği",
+  "Kapı döşeme",
+  "Klima petek ve bombası",
+  "Torpido",
+  "Bagaj ve stepne",
+  "Emniyet kemeri",
+  "Kapı fitilleri",
+  "Motor temizliği",
+  "Jant temizliği",
+  "Rötuş (araç durumuna göre)",
+  "Koch chemie ve menzerna ürünlerimiz",
+];
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-black text-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+          <div className="font-[var(--font-display)] text-xl tracking-wide">{heroTitle}</div>
+          <nav className="hidden sm:flex gap-6 text-sm">
+            <a href="#paketler" className="hover:text-zinc-300">Paketler</a>
+            <a href="#iletisim" className="hover:text-zinc-300">İletişim</a>
+          </nav>
+          <a href="#iletisim" className="sm:inline-block hidden rounded-md bg-white text-black px-4 py-2 text-sm font-medium">Hemen Ara</a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-20">
+          <div className="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black opacity-90" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 sm:py-32 grid gap-8">
+          <h1 className="text-4xl sm:text-6xl font-[var(--font-display)] leading-tight">
+            Premium oto yıkama ve detaylı temizlik
+          </h1>
+          <p className="text-zinc-300 max-w-2xl">
+            Kusursuz parlaklık ve koruma. AKN car detailing ile aracınız ilk günkü
+            görünümüne kavuşsun.
+          </p>
+          <div className="flex gap-3">
+            <a href="#paketler" className="rounded-md bg-white text-black px-5 py-2.5 text-sm font-semibold">Paketleri Gör</a>
+            <a href="#iletisim" className="rounded-md border border-white/20 px-5 py-2.5 text-sm font-semibold hover:bg-white/10">İletişime Geç</a>
+          </div>
+        </div>
+        
+        {/* Overlay gradient */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-black/20 to-black/60" />
+      </section>
+
+      {/* Packages */}
+      <section id="paketler" className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="rounded-2xl border border-white/10 bg-zinc-900/60 p-6 sm:p-8">
+            <h2 className="text-2xl sm:text-3xl font-[var(--font-display)] mb-4">Premium Gold Paket</h2>
+            <ul className="space-y-2 text-zinc-200">
+              {premiumGoldItems.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/70" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-zinc-900/60 p-6 sm:p-8">
+            <h2 className="text-2xl sm:text-3xl font-[var(--font-display)] mb-4">Pasta - Cila - Kuaför Paketi</h2>
+            <ul className="space-y-2 text-zinc-200">
+              {kuaforItems.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/70" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="iletisim" className="bg-zinc-950 border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16 grid sm:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="text-2xl font-[var(--font-display)]">İletişim</h3>
+            <p className="text-zinc-300 mt-2">Randevu ve bilgi için arayın.</p>
+          </div>
+          <div className="flex sm:justify-end items-center gap-4">
+            <a href={`tel:${phoneNumber}`} className="rounded-lg bg-white text-black px-5 py-3 font-semibold">{phoneNumber.replace('+90', '0')}</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-sm text-zinc-400">
+        <div className="mx-auto max-w-6xl px-4 py-8 flex items-center justify-between">
+          <span>© {new Date().getFullYear()} {heroTitle}</span>
+          <a href="#" className="hover:text-zinc-200">Yukarı çık</a>
+        </div>
       </footer>
     </div>
   );
