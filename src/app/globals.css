@@ -5,7 +5,8 @@
   --foreground: #171717;
 }
 
-@theme inline {
+/* Custom CSS variables */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -29,3 +30,32 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Hero background slider animation - 2 images with perfect loop */
+@keyframes slide-1 {
+  0%, 40% {
+    transform: translateX(0%);
+  }
+  60%, 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-2 {
+  0%, 40% {
+    transform: translateX(100%);
+  }
+  60%, 100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide-1 {
+  animation: slide-1 6s infinite ease-in-out;
+}
+
+.animate-slide-2 {
+  animation: slide-2 6s infinite ease-in-out;
+  animation-delay: 3s;
+}
+

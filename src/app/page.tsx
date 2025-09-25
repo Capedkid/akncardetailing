@@ -61,15 +61,27 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
-        {/* Background Image - FINAL VERSION */}
-        <div className="absolute inset-0 z-0">
-          {/* Hero background image */}
-          <div className="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+        {/* Animated Background Slider */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Image 1 */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
                style={{
                  backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
                  backgroundSize: 'cover',
-                 backgroundPosition: 'center'
+                 backgroundPosition: 'center',
+                 animation: 'slide-1 6s infinite ease-in-out'
                }} />
+          
+          {/* Image 2 */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 animation: 'slide-2 6s infinite ease-in-out'
+               }} />
+          
+          
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/50" />
           {/* Secondary gradient overlay */}
