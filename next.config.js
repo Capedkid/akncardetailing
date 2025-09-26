@@ -17,7 +17,7 @@ const nextConfig = {
     // Minimal image sizes
     imageSizes: [16, 32, 48, 64, 96, 128],
     // Image quality settings (required for Next.js 16+)
-    qualities: [50, 75, 85, 100],
+    qualities: [25, 50, 75, 85, 90, 95, 100],
     // Shorter cache time for faster updates
     minimumCacheTTL: 60 * 60 * 24, // 1 day
   },
