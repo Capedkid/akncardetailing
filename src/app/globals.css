@@ -31,31 +31,94 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Hero background slider animation - 2 images with perfect loop */
+/* Hero background slider animation - 6 images for seamless loop */
 @keyframes slide-1 {
-  0%, 40% {
+  0%, 12% {
     transform: translateX(0%);
   }
-  60%, 100% {
+  16%, 100% {
     transform: translateX(-100%);
   }
 }
 
 @keyframes slide-2 {
-  0%, 40% {
+  0%, 12% {
     transform: translateX(100%);
   }
-  60%, 100% {
+  16%, 28% {
+    transform: translateX(0%);
+  }
+  32%, 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-3 {
+  0%, 28% {
+    transform: translateX(100%);
+  }
+  32%, 44% {
+    transform: translateX(0%);
+  }
+  48%, 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-4 {
+  0%, 44% {
+    transform: translateX(100%);
+  }
+  48%, 60% {
+    transform: translateX(0%);
+  }
+  64%, 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-5 {
+  0%, 60% {
+    transform: translateX(100%);
+  }
+  64%, 76% {
+    transform: translateX(0%);
+  }
+  80%, 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-6 {
+  0%, 76% {
+    transform: translateX(100%);
+  }
+  80%, 100% {
     transform: translateX(0%);
   }
 }
 
 .animate-slide-1 {
-  animation: slide-1 6s infinite ease-in-out;
+  animation: slide-1 24s infinite ease-in-out;
 }
 
 .animate-slide-2 {
-  animation: slide-2 6s infinite ease-in-out;
-  animation-delay: 3s;
+  animation: slide-2 24s infinite ease-in-out;
+}
+
+.animate-slide-3 {
+  animation: slide-3 24s infinite ease-in-out;
+}
+
+.animate-slide-4 {
+  animation: slide-4 24s infinite ease-in-out;
+}
+
+.animate-slide-5 {
+  animation: slide-5 24s infinite ease-in-out;
+}
+
+.animate-slide-6 {
+  animation: slide-6 24s infinite ease-in-out;
 }
 

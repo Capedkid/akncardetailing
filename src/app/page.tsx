@@ -69,7 +69,7 @@ export default function Home() {
                  backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
                  backgroundSize: 'cover',
                  backgroundPosition: 'center',
-                 animation: 'slide-1 6s infinite ease-in-out'
+                 animation: 'slide-1 24s infinite ease-in-out'
                }} />
           
           {/* Image 2 */}
@@ -78,7 +78,43 @@ export default function Home() {
                  backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
                  backgroundSize: 'cover',
                  backgroundPosition: 'center',
-                 animation: 'slide-2 6s infinite ease-in-out'
+                 animation: 'slide-2 24s infinite ease-in-out'
+               }} />
+          
+          {/* Image 3 - Black BMW */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 animation: 'slide-3 24s infinite ease-in-out'
+               }} />
+          
+          {/* Image 4 - Black Mercedes */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 animation: 'slide-4 24s infinite ease-in-out'
+               }} />
+          
+          {/* Image 5 - Black Audi */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 animation: 'slide-5 24s infinite ease-in-out'
+               }} />
+          
+          {/* Image 6 (duplicate of Image 1 for seamless loop) */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
+               style={{
+                 backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 animation: 'slide-6 24s infinite ease-in-out'
                }} />
           
           
