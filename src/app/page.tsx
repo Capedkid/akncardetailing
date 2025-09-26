@@ -7,6 +7,40 @@ const heroTitle = process.env.NEXT_PUBLIC_SITE_NAME || "AKN car detailing";
 const phoneNumber = process.env.NEXT_PUBLIC_PHONE || "+905455101118";
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "905455101118";
 
+// Optimized image URLs for hero slider
+const heroImages = [
+  {
+    src: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "Range Rover - Premium Car Detailing",
+    animation: "slide-1"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "Porsche - Premium Car Detailing",
+    animation: "slide-2"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "BMW - Premium Car Detailing",
+    animation: "slide-3"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "Mercedes - Premium Car Detailing",
+    animation: "slide-4"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "Audi - Premium Car Detailing",
+    animation: "slide-5"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    alt: "Range Rover - Premium Car Detailing (Loop)",
+    animation: "slide-6"
+  }
+];
+
 const premiumGoldItems = [
   "Kil ve demir tozu uygulamaları",
   "Kalın çizik giderici pasta",
@@ -62,6 +96,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Subtle car-themed pattern overlay */}
@@ -104,59 +139,26 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
         {/* Animated Background Slider */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Image 1 */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-1 24s infinite ease-in-out'
-               }} />
-          
-          {/* Image 2 */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-2 24s infinite ease-in-out'
-               }} />
-          
-          {/* Image 3 - Black BMW */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-3 24s infinite ease-in-out'
-               }} />
-          
-          {/* Image 4 - Black Mercedes */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-4 24s infinite ease-in-out'
-               }} />
-          
-          {/* Image 5 - Black Audi */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-5 24s infinite ease-in-out'
-               }} />
-          
-          {/* Image 6 (duplicate of Image 1 for seamless loop) */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" 
-               style={{
-                 backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 animation: 'slide-6 24s infinite ease-in-out'
-               }} />
+          {heroImages.map((image, index) => (
+            <div 
+              key={index}
+              className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-black"
+              style={{
+                animation: `${image.animation} 24s infinite ease-in-out`
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="100vw"
+                priority={index === 0} // Sadece ilk görseli priority olarak yükle
+                quality={85}
+                className="object-cover"
+                loading={index === 0 ? "eager" : "lazy"}
+              />
+            </div>
+          ))}
           
           
           {/* Dark overlay for text readability */}

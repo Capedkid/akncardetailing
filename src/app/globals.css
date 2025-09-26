@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Performance optimizations */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Optimize font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
